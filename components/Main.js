@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
 
-import { createBottomTabNavigator, CreateBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 import { fetchUser } from '../redux/actions/index';
 
@@ -16,11 +16,14 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import FeedScreen from './main/Feed';
 import ProfileScreen from './main/Profile';
 import PetScreen from './main/Pets';
-import AddScreen from './main/Add';
 
 import { NavigationContainer } from '@react-navigation/native';
 
-const Tab  = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
+
+const EmptyScreen = () => {
+    return null
+}
 
 class Main extends Component {
     componentDidMount() {
@@ -44,7 +47,7 @@ class Main extends Component {
     //   </Text>
     // </View>
 
-    <Tab.Navigator>
+    <Tab.Navigator initialRouteName='Humans' labeled={false}>
             <Tab.Screen 
                 name='Humans' 
                 options={{ 
@@ -62,13 +65,21 @@ class Main extends Component {
                 }}
                 component={PetScreen} />
             <Tab.Screen 
-                name='Add' 
+                name='AddContainer' 
                 options={{ 
                     tabBarIcon: ({ color, size}) => (
                         <MaterialCommunityIcons name="plus-box" color={color} size={26} />
                     )
                 }}
-                component={AddScreen} />
+                component={EmptyScreen} 
+                listeners={({ navigation }) => ({
+                    tabPress: event => {
+                        event.preventDefault();
+                        navigation.navigate("Add")
+                    }
+                })}
+                
+                />
             <Tab.Screen 
                 name='Profile' 
                 options={{ 
