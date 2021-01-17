@@ -60,6 +60,9 @@ function Profile(props) {
             </View>
 
             <View style={styles.containerGallery}>
+                <Card.Title title="Your Donations" subtitle="Food you didn't waste" left={LeftContent} />
+                        
+            
                 <FlatList
                     numColumns={1}
                     horizontal={false}
@@ -79,9 +82,7 @@ function Profile(props) {
 
                         // **************
                         <Card>
-                        <Card.Title title="Your Donations" subtitle="Food you didn't waste" left={LeftContent} />
-                        
-            
+
                         <Card.Cover source={{ uri: item.downloadURL }} />
                         <Card.Content>
                         {/* <Paragraph>Mi Casa</Paragraph> */}
