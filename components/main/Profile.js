@@ -50,6 +50,8 @@ function Profile(props) {
     if (user === null) {
         return <View />
     }
+    const LeftContent = props => <Avatar.Icon {...props} icon="fruit-pineapple" />
+
     return (
         <View style={styles.container}>
             <View style={styles.containerInfo}>
@@ -57,27 +59,40 @@ function Profile(props) {
                 <Text>{ user.email }</Text>
             </View>
 
-            <Text style={styles.header}>
-                Your Donations:
-            </Text>
-
             <View style={styles.containerGallery}>
                 <FlatList
                     numColumns={1}
                     horizontal={false}
                     data={userPosts}
                     renderItem={({ item }) => (
-                        <Card>
-                            {/* <Card.Title title={ item.description } /> */}
-                            {/* <Card.Content> */}
-                            {/* <Paragraph>{ item.description }</Paragraph> */}
-                            {/* </Card.Content> */}
-                            <Card.Cover source={{ uri: item.downloadURL }} />
+                        // <Card>
+                        //     {/* <Card.Title title={ item.description } /> */}
+                        //     {/* <Card.Content> */}
+                        //     {/* <Paragraph>{ item.description }</Paragraph> */}
+                        //     {/* </Card.Content> */}
+                        //     <Card.Cover source={{ uri: item.downloadURL }} />
                         
                             
-                            <Title>{item.description}</Title>
-                            <Paragraph>{ item.updatedAt }</Paragraph>
-                        </Card>
+                        //     <Title>{item.description}</Title>
+                        //     <Paragraph>{ item.updatedAt }</Paragraph>
+                        // </Card>
+
+                        // **************
+                        <Card>
+                        <Card.Title title="Your Donations" subtitle="Food you didn't waste" left={LeftContent} />
+                        
+            
+                        <Card.Cover source={{ uri: item.downloadURL }} />
+                        <Card.Content>
+                        {/* <Paragraph>Mi Casa</Paragraph> */}
+                        </Card.Content>
+                        <Card.Actions>
+                        <Button>{item.description}</Button>
+                        {/* <Button></Button> */}
+                        </Card.Actions>
+            
+                    </Card>
+                        // **************
 
 
                         // <View

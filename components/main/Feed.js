@@ -19,8 +19,8 @@ export default function Feed() {
             {/* <Paragraph>Mi Casa</Paragraph> */}
             </Card.Content>
             <Card.Actions>
-            <Button>Pea Berry Special Organic Coffee</Button>
-            {/* <Button>Ok</Button> */}
+            <Button>☕ Pea Berry Special Organic Coffee</Button>
+            {/* <Button></Button> */}
             </Card.Actions>
 
         </Card>
@@ -32,7 +32,7 @@ export default function Feed() {
             {/* <Paragraph>Mi Casa</Paragraph> */}
             </Card.Content>
             <Card.Actions>
-            <Button>Wine, Cinnamon Buns and Biscuits</Button>
+            <Button>🍷 Wine, Cinnamon Buns and Biscuits</Button>
             {/* <Button>Ok</Button> */}
             </Card.Actions>
             </Card>
@@ -44,7 +44,7 @@ export default function Feed() {
             {/* <Paragraph>Mi Casa</Paragraph> */}
             </Card.Content>
             <Card.Actions>
-            <Button>Cheesy Sauce</Button>
+            <Button>🧀 Cheesy Sauce</Button>
             {/* <Button>Ok</Button> */}
             </Card.Actions>
         </Card>
@@ -56,7 +56,7 @@ export default function Feed() {
             {/* <Paragraph>Mi Casa</Paragraph> */}
             </Card.Content>
             <Card.Actions>
-            <Button>Wine, Cashew, Crispbread</Button>
+            <Button>🍞 Wine, Cashew, Crispbread</Button>
             {/* <Button>Ok</Button> */}
             </Card.Actions>
         </Card>
