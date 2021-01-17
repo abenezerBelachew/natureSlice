@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import {View, Text, Settings } from 'react-native';
 
-
+import firebase from 'firebase';
 import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
@@ -57,7 +57,7 @@ class Main extends Component {
                 name='Humans' 
                 options={{ 
                     tabBarIcon: ({ color, size}) => (
-                        <MaterialCommunityIcons name="human-greeting" color={color} size={26} />
+                        <MaterialCommunityIcons name="fruit-cherries" color={color} size={26} />
                     )
                 }}
                 component={FeedScreen} />
@@ -92,6 +92,12 @@ class Main extends Component {
                         <MaterialCommunityIcons name="account-circle" color={color} size={26} />
                     )
                 }}
+                listeners={({ navigation }) => ({
+                    tabPress: event => {
+                        event.preventDefault();
+                        navigation.navigate("Profile", {uid: firebase.auth().currentUser.uid})
+                    }
+                })}
                 component={ProfileScreen} />
     </Tab.Navigator>
     );
