@@ -13,7 +13,11 @@ import { createBottomTabNavigator, CreateBottomTabNavigator } from '@react-navig
 import { fetchUser } from '../redux/actions/index';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import FeedScreen from './main/Feed'
+import FeedScreen from './main/Feed';
+import ProfileScreen from './main/Profile';
+import PetScreen from './main/Pets';
+import AddScreen from './main/Add';
+
 import { NavigationContainer } from '@react-navigation/native';
 
 const Tab  = createBottomTabNavigator();
@@ -42,14 +46,37 @@ class Main extends Component {
 
     <Tab.Navigator>
             <Tab.Screen 
-                name='Feed' 
+                name='Humans' 
                 options={{ 
                     tabBarIcon: ({ color, size}) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
+                        <MaterialCommunityIcons name="human-greeting" color={color} size={26} />
                     )
                 }}
                 component={FeedScreen} />
-            {/* <Tab.Screen name='Settings' component={SettingsScreen} /> */}
+            <Tab.Screen 
+                name='Pets' 
+                options={{ 
+                    tabBarIcon: ({ color, size}) => (
+                        <MaterialCommunityIcons name="paw" color={color} size={26} />
+                    )
+                }}
+                component={PetScreen} />
+            <Tab.Screen 
+                name='Add' 
+                options={{ 
+                    tabBarIcon: ({ color, size}) => (
+                        <MaterialCommunityIcons name="plus-box" color={color} size={26} />
+                    )
+                }}
+                component={AddScreen} />
+            <Tab.Screen 
+                name='Profile' 
+                options={{ 
+                    tabBarIcon: ({ color, size}) => (
+                        <MaterialCommunityIcons name="account-circle" color={color} size={26} />
+                    )
+                }}
+                component={ProfileScreen} />
     </Tab.Navigator>
     );
   }
