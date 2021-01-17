@@ -10,7 +10,7 @@ import { bindActionCreators } from 'redux';
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
-import { fetchUser } from '../redux/actions/index';
+import { fetchUser, fetchUserPosts } from '../redux/actions/index';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FeedScreen from './main/Feed';
@@ -28,6 +28,7 @@ const EmptyScreen = () => {
 class Main extends Component {
     componentDidMount() {
         this.props.fetchUser();
+        this.props.fetchUserPosts();
     }
   render() {
     //   const { currentUser } = this.props;
@@ -100,7 +101,7 @@ const mapStateToProps = (store) => ({
     currentUser: store.userState.currentUser
 })
 const mapDispatchProps = (dispatch) => bindActionCreators({
-    fetchUser
+    fetchUser, fetchUserPosts
     }, dispatch
 );
 
