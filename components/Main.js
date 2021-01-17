@@ -47,7 +47,11 @@ class Main extends Component {
     //   </Text>
     // </View>
 
-    <Tab.Navigator initialRouteName='Humans' labeled={false}>
+    <Tab.Navigator initialRouteName='Humans' labeled={false} 
+      activeColor="#f0edf6"
+      inactiveColor="#3e2465"
+      barStyle={{ backgroundColor: '#00A86B' }}
+    >
             <Tab.Screen 
                 name='Humans' 
                 options={{ 
@@ -56,14 +60,14 @@ class Main extends Component {
                     )
                 }}
                 component={FeedScreen} />
-            <Tab.Screen 
+            {/* <Tab.Screen 
                 name='Pets' 
                 options={{ 
                     tabBarIcon: ({ color, size}) => (
                         <MaterialCommunityIcons name="paw" color={color} size={26} />
                     )
                 }}
-                component={PetScreen} />
+                component={PetScreen} /> */}
             <Tab.Screen 
                 name='AddContainer' 
                 options={{ 
